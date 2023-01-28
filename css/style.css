@@ -795,7 +795,8 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
-#clesy-projects:before, #clesy-projects:after {
+/*#clesy-projects:after*/
+#clesy-projects:before {
     position: absolute;
     transform: rotate(-1.7deg);
     -ms-transform: rotate(-1.7deg);
@@ -868,12 +869,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #clesy-projects .clesy-project-item .clesy-text h2 {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
     margin: 0;
 }
 
 #clesy-projects .clesy-project-item .clesy-text span {
+    color: #b3b3b3;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#clesy-projects .clesy-project-item .clesy-text ul {
     color: #b3b3b3;
     font-size: 16px;
     font-weight: 400;

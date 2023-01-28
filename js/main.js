@@ -291,10 +291,8 @@
 
 
                     $(this.element).addClass('animated');
-
                 }
             }, {offset: '80%'});
-
         }
     };
 
@@ -335,7 +333,6 @@
         }
     }
 
-
     function contactAnimate() {
         let contact = $('#clesy-contact');
         if (contact.length > 0) {
@@ -364,7 +361,6 @@
         windowScroll();
         navigationSection();
         goToTop();
-
 
         // Animations
         homeAnimate();
