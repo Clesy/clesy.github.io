@@ -296,61 +296,32 @@
         }
     };
 
-    function countersAnimate() {
-        let counters = $('#fh5co-counters');
-        if (counters.length > 0) {
-            counters.waypoint(function (direction) {
+    var experienceAnimation = function () {
+        if ($('#clesy-experience').length > 0) {
+
+            $('#clesy-experience').waypoint(function (direction) {
+
                 if (direction === 'down' && !$(this.element).hasClass('animated')) {
-                    var sec = counters.find('.to-animate').length,
-                        sec = parseInt((sec * 200) + 400);
+
+
                     setTimeout(function () {
-                        counters.find('.to-animate').each(function (k) {
+                        $('#clesy-experience .to-animate').each(function (k) {
                             var el = $(this);
+
                             setTimeout(function () {
                                 el.addClass('fadeInUp animated');
                             }, k * 200, 'easeInOutExpo');
+
                         });
                     }, 200);
-                    setTimeout(function () {
-                        counters.find('.js-counter').countTo({
-                            formatter: function (value, options) {
-                                return value.toFixed(options.decimals);
-                            },
-                        });
-                    }, 400);
 
-                    setTimeout(function () {
-                        counters.find('.to-animate-2').each(function (k) {
-                            let el = $(this);
-                            setTimeout(function () {
-                                el.addClass('bounceIn animated');
-                            }, k * 200, 'easeInOutExpo');
-                        });
-                    }, sec);
                     $(this.element).addClass('animated');
+
                 }
             }, {offset: '80%'});
-        }
-    }
 
-    function contactAnimate() {
-        let contact = $('#clesy-contact');
-        if (contact.length > 0) {
-            contact.waypoint(function (direction) {
-                if (direction === 'down' && !$(this.element).hasClass('animated')) {
-                    setTimeout(function () {
-                        contact.find('.to-animate').each(function (k) {
-                            let el = $(this);
-                            setTimeout(function () {
-                                el.addClass('fadeInUp animated');
-                            }, k * 200, 'easeInOutExpo');
-                        });
-                    }, 200);
-                    $(this.element).addClass('animated');
-                }
-            }, {offset: '80%'});
         }
-    }
+    };
 
     // Document on load.
     $(function () {
@@ -369,7 +340,8 @@
         testimonialAnimate();
         servicesAnimate();
         aboutAnimate();
-        countersAnimate();
-        contactAnimate();
+        // countersAnimate();
+        experienceAnimation();
+        // contactAnimate();
     });
 }());
